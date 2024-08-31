@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    image: node:14  # Ou qualquer outra versão do Node.js que você está usando
+    working_dir: /usr/src/app
+    volumes:
+      
+.:/usr/src/app
+  env_file:
+.env  # Indica que o Docker deve carregar as variáveis de ambiente do arquivo .env
+ports:
+'3000:3000'  # Mapeia a porta 3000 do container para a porta 3000 no host
+command: npm start  # Comando para iniciar sua aplicação
